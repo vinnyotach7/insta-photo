@@ -4,7 +4,7 @@
 A website that looks like instagram where users can create profiles and post photos, and view other users' photos
 
 # Application
-<img src="/home/moringaschool/Pictures/Screenshot from 2018-12-20 09-33-39.png">
+<img src="../media/images/Screenshot from 2018-12-20 09-33-39.png">
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
