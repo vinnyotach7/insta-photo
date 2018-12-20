@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <style>
+        .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+    .navbar .logo-section {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo-section div {
+      align-self: stretch;
+      width: 1px;
+      background: black;
+      margin: 0 20px;
+    }
+    .navbar .icons-section .far {
+      text-decoration: none;
+      color: inherit;
+      font-size: 2rem;
+      margin: 0 10px;
+    }
+    .navbar .logo {
+      width: 40px;
+    }
+    .navbar .logoname {
+      width: 130px;
+    }
+    .navbar .input-search {
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      border: 2px solix #ddd;
+      outline: 0;
+    }
+    .navbar .input-search:focus {
+      text-align: left;
+    }
+    
+  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar">
+            <section class="logo-section"><a href="/"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" /></a>
+                <div></div><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" />
+            </section>
+            <form class="search-section" role="search" action="{% url 'search_user' %}">
+                <input class="input-search" type="search" name="user" placeholder="Search">
+            </form>
+            <section class="icons-section">
+                <a href="{% url 'upload_image' %}" style="font-size:16px;   # url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    #     views.activate, name='activate'),color:antiquewhite;">Upload image</a>
+                <a class="far fa-compass" href="{% url 'edit_profile' %}" style="font-size:16px; color:red;">Edit
+                    Profile</a>
+                <a class="far fa-user" href="{% url 'profile' %}"></a>
+                <a class="fa fa-user" href="/logout" style="font-size:16px; color:yellow;">Logout</a>
+            </section>
+        </nav>
+
+    </div>
+</body>
+
+</html>

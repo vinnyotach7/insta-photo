@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+{% load staticfiles %}
+{% block content %}
+{{form.media}}
+
+<body>
+    <button></button>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-10">
+                {% if images %}
+                {% for image in images %}
+
+                <div class="thumbnail">
+
+                    <a href="/profile">
+                        <h3 style="font-size:16px; color:goldenrod;">{{ user.username}}</h3>
+                    </a>
+                    <span>Posted {{image.date_uploaded|timesince}} ago </span>
+                    <a href="/single_image/{{image.id}}">
+                        <img src="{{image.image_image.url}}" alt="Image" style="height:500px; width:500px">
+                    </a>
+                    {% for comment in image.comments.all %}
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p style="font-size:20 px; color:greenyellow;"><strong>{{ comment.user.username }}</strong></p>
+                            <p style="font-size:20px; color:yellow;">{{comment.comment}}</p>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <form id='comment' action="/new_comment/{{image.id}}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% bootstrap_form co_form %}
+                        <input type="submit" class="btn btn-primary" value="comment">
+                    </form>
+                </div>
+
+                {% endfor %}
+                {% else %}
+                <p>There are no images here</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}

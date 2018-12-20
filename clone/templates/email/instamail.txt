@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to my Instagram app where you connect with friends all over
